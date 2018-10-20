@@ -64,9 +64,18 @@
         <script>
             const dice = document.getElementById('dice')
             const horse = document.getElementById('horse')
-            dice.addEventListener('click', function () {
-                horse.style.top = 51 + 'px';
-            })
+            const cellSize = 51;
+            let current = {
+                top: 0,
+                left: 0
+            };
+            dice.addEventListener('click', move)
+            
+            function move () {
+                current.top += cellSize;
+                horse.style.top = current.top + 'px';
+                horse.style.left = current.left + 'px';
+            }
         </script>
     </body>
 </html>
