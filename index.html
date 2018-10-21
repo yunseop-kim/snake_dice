@@ -62,20 +62,36 @@
         </div>
         
         <script>
+            // board is n X n size.
             const dice = document.getElementById('dice')
             const horse = document.getElementById('horse')
             const cellSize = 51;
-            let current = {
-                top: 0,
-                left: 0
-            };
+            let position = 0;
             dice.addEventListener('click', move)
             
-            function move () {
-                current.top += cellSize;
-                horse.style.top = current.top + 'px';
-                horse.style.left = current.left + 'px';
+            function move (event, value = 1) {
+                // 1~4: increase left size, 
+                // 5~8: decrease left size
+                // 9~12: increase left size
+                // 13~16: decrease left size
+                // 5, 9, 13: increase top size
+                // if (n % 4 === 1) then increase top size.
+                let top = horse.offsetTop;
+                let left = horse.offsetLeft;
+
+                position += value
+                console.log(position, top, left)
+                if ((position % 4 === 0) && position > 1) {
+                    horse.style.top = top + cellSize + 'px';
+                } else if (isEven(Math.floor(position / 4))) {
+                    horse.style.left = (left + cellSize) + 'px';
+                } else if (isOdd(Math.floor(position / 4))) {
+                    horse.style.left = (left - cellSize) + 'px';
+                }
             }
+            
+            const isOdd = (n) => Math.abs(n % 2) === 1;
+            const isEven = (n) => (n % 2) === 0;
         </script>
     </body>
 </html>
