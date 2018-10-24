@@ -61,42 +61,41 @@
             </div>
         </div>
         
-        <script>
-            // board is n X n size.
-            const isOdd = (n) => Math.abs(n % 2) === 1;
-            const isEven = (n) => (n % 2) === 0;
-            const dice = document.getElementById('dice')
-            const horse = document.getElementById('horse')
-            const cellSize = 51;
-            let position = 0;
-            dice.addEventListener('click', dicing)
-            
-            function move (event, value = 1) {
-                let top = horse.offsetTop;
-                let left = horse.offsetLeft;
+    <script src="src/util.js"></script>
+    <script>
+        // board is n X n size.
+        const dice = document.getElementById('dice')
+        const horse = document.getElementById('horse')
+        const cellSize = 51;
+        let position = 0;
+        dice.addEventListener('click', dicing)
 
-                if (position >= 15) return;
-                position += value
-                console.log(position, top, left)
-                if ((position % 4 === 0) && position > 1) {
-                    horse.style.top = top + cellSize + 'px';
-                } else if (isEven(Math.floor(position / 4))) {
-                    horse.style.left = (left + cellSize) + 'px';
-                } else if (isOdd(Math.floor(position / 4))) {
-                    horse.style.left = (left - cellSize) + 'px';
+        function move (event, value = 1) {
+            let top = horse.offsetTop;
+            let left = horse.offsetLeft;
+
+            if (position >= 15) return;
+            position += value
+            console.log(position, top, left)
+            if ((position % 4 === 0) && position > 1) {
+                horse.style.top = top + cellSize + 'px';
+            } else if (isEven(Math.floor(position / 4))) {
+                horse.style.left = (left + cellSize) + 'px';
+            } else if (isOdd(Math.floor(position / 4))) {
+                horse.style.left = (left - cellSize) + 'px';
+            }
+        }
+
+        function dicing(evt, delay = 500, repetitions = Math.floor(Math.random() * 6)) {
+            let x = 0;
+            const intervalID = window.setInterval(function () {
+                move();
+                if (++x === repetitions) {
+                    window.clearInterval(intervalID);
                 }
-            }
+            }, delay);
+        }
+    </script>
+</body>
 
-            function dicing(evt, delay = 500, repetitions = Math.floor(Math.random() * 6)) {
-                window.alert(repetitions);
-                let x = 0;
-                const intervalID = window.setInterval(function () {
-                    move();
-                    if (++x === repetitions) {
-                        window.clearInterval(intervalID);
-                    }
-                }, delay);
-            }
-        </script>
-    </body>
 </html>
