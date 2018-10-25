@@ -12,3 +12,4 @@
 - https://stackoverflow.com/questions/5703552/css-center-text-horizontally-and-vertically-inside-a-div-block?rq=1
 - for loop callback function: https://hyunseob.github.io/2015/08/09/async-javascript/
 - make chunks: https://medium.com/@Dragonza/four-ways-to-chunk-an-array-e19c889eac4
+- start simple http server: `python -m SimpleHTTPServer 8000`
