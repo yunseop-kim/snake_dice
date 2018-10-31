@@ -12,5 +12,9 @@ export default class Board {
                 return rows
             })
         console.log(result)
+        const cells = document.createElement('div')
+        const node = document.createTextNode('This is Test')
+        cells.appendChild(node);
+        document.getElementById('app').appendChild(cells)
     }
 }
