@@ -2,102 +2,58 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <style>
-            .board {
-                position: relative;
-            }
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-            .row > .cell {
-                border-left: black 1px solid;
-                border-bottom: black 1px solid;
-                width: 50px;
-                height: 50px;
-                display: inline-block;
-            }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .board {
+            position: relative;
+        }
 
-            .row > .cell:last-child {
-                border-right: black 1px solid;
-            }
+        .row>.cell {
+            border-left: black 1px solid;
+            border-bottom: black 1px solid;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
 
-            .row:first-child > .cell {
-                border-top: black 1px solid;
-            }
-            
+        .row>.cell:last-child {
+            border-right: black 1px solid;
+        }
 
-            .horse {
-                position: absolute;
-                border: red 1px solid;
-                width: 50px;
-                height: 50px;
-                text-align: center;
-                vertical-align: middle;
-                line-height: 50px;
-                top: 0;
-                left: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+        .row:first-child>.cell {
+            border-top: black 1px solid;
+        }
+
+
+        .horse {
+            position: absolute;
+            border: red 1px solid;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 50px;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div id="app"></div>
-        <!-- <h1>뱀주사위 놀이</h1>
-        <div class="board">
-            <div class="row"><div class="cell">1</div><div class="cell">2</div><div class="cell">3</div><div class="cell">4</div></div>
-            <div class="row"><div class="cell">8</div><div class="cell">7</div><div class="cell">6</div><div class="cell">5</div></div>
-            <div class="row"><div class="cell">9</div><div class="cell">10</div><div class="cell">11</div><div class="cell">12</div></div>
-            <div class="row"><div class="cell">16</div><div class="cell">15</div><div class="cell">14</div><div class="cell">13</div></div>
-            <div id="horse" class="horse">Here</div>
-            <div>
-                <button id="dice">주사위 굴리기</button>
-            </div>
-        </div> -->
-        
-    <script type="module" src="app.js">
-        const board = new Board();
-        board.render();
-        // board is n X n size.
-        // const dice = document.getElementById('dice')
-        // const horse = document.getElementById('horse')
-        // const cellSize = 51;
-        // let position = 0;
-        // dice.addEventListener('click', dicing)
-
-        // function move (event, value = 1) {
-        //     let top = horse.offsetTop;
-        //     let left = horse.offsetLeft;
-
-        //     if (position >= 15) return;
-        //     position += value
-        //     console.log(position, top, left)
-        //     if ((position % 4 === 0) && position > 1) {
-        //         horse.style.top = top + cellSize + 'px';
-        //     } else if (isEven(Math.floor(position / 4))) {
-        //         horse.style.left = (left + cellSize) + 'px';
-        //     } else if (isOdd(Math.floor(position / 4))) {
-        //         horse.style.left = (left - cellSize) + 'px';
-        //     }
-        // }
-
-        // function dicing(evt, delay = 500, repetitions = Math.floor(Math.random() * 6)) {
-        //     let x = 0;
-        //     const intervalID = window.setInterval(function () {
-        //         move();
-        //         if (++x === repetitions) {
-        //             window.clearInterval(intervalID);
-        //         }
-        //     }, delay);
-        // }
-    </script>
+    <div id="app"></div>
+    <script src="dist/main.js"></script>
 </body>
 
 </html>
