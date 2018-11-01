@@ -14,3 +14,5 @@
 - make chunks: https://medium.com/@Dragonza/four-ways-to-chunk-an-array-e19c889eac4
 - start simple http server: `python -m SimpleHTTPServer 8000`
 - build dom element : https://www.w3schools.com/js/js_htmldom_nodes.asp
+- vanillajs with es6: https://readme.skplanet.com/?p=12185
+- webpack: https://hackernoon.com/a-dead-simple-webpack-4-example-with-vanilla-javascript-no-libraries-and-frameworks-8b9d0a7684be
