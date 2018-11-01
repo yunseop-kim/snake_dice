@@ -16,3 +16,5 @@
 - build dom element : https://www.w3schools.com/js/js_htmldom_nodes.asp
 - vanillajs with es6: https://readme.skplanet.com/?p=12185
 - webpack: https://hackernoon.com/a-dead-simple-webpack-4-example-with-vanilla-javascript-no-libraries-and-frameworks-8b9d0a7684be
+- webpack hmr: https://medium.com/@larrybotha/great-article-4d0eb79a61a6
+- webpack basic: https://imskojs.github.io/webpack-practice-02/
