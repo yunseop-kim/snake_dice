@@ -16,7 +16,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Snake Dice Game'
+            title: 'Snake Dice Game',
+            template: 'index.html'
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
